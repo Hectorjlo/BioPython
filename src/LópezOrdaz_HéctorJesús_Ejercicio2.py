@@ -1,10 +1,9 @@
-class gene():
+class gene_sequence():
 
-    def __init__(self, name, sequence, expression, isDNA=True):
+    def __init__(self, name, sequence, expression):
         self.name = name
         self.expression = expression
         self.sequence = sequence.upper().replace(" ", "")
-        self.isDNA = isDNA
 
 
     def lenght(self):
@@ -21,6 +20,9 @@ class gene():
 
     
 # Probe 
-dna_gene = gene("lacY", "AAATGCATCAGCTAGCTAGCTAGCATCGATCGAT", "overexpressed")
-print(f'The lenght of the gene ({dna_gene.name}) is of {dna_gene.lenght()} bases and is {dna_gene.expression}')
-print(f'It has {dna_gene.gc_content()}% of GC content')
+
+if __name__ == '__main__':
+
+    dna_gene = gene_sequence("lacY", "AAATGCATCAGCTAGCTAGCTAGCATCGATCGAT", "overexpressed")
+    print(f'The lenght of the gene ({dna_gene.name}) is of {dna_gene.lenght()} bases and is {dna_gene.expression}')
+    print(f'It has {dna_gene.gc_content()}% of GC content')
