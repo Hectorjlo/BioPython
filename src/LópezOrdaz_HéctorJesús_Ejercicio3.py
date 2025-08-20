@@ -1,5 +1,5 @@
 # Importing the class of the previous work
-from LópezOrdaz_HéctorJesús_Ejercicio2 import gene_sequence
+from LópezOrdaz_HéctorJesús_Ejercicio2 import dna_sequence
 
 ###-------------------------### 
 #   Ejercicio 3:
@@ -9,16 +9,34 @@ from LópezOrdaz_HéctorJesús_Ejercicio2 import gene_sequence
 ###-------------------------###
 
 
-class tRNA(gene_sequence):
+class tRNA(dna_sequence):
+    has_cca_motif = False
+    def check_cca(self):
+        if len(self.sequence) >= 3:
+            if self.sequence[-3:] == 'CCA':
+                has_cca_motif = True
+                result_analysis = "The tRNA has a CCA motif in the end 3'"
+        else:
+            result_analysis = 'Sequence too short to have a CCA motif'
 
-    # Separate by 3 pairs given a reading frame default with 1
-    def split_by_codons(self, reading_frame = 1):
-        codons = 1 #[for codon in gene_sequence.sequence] 
+        return result_analysis
+        
+        
+ 
+        
 
+        
+        
+       
+    
 if __name__ == '__main__':
-    dna = gene_sequence('lacY', 'AAATGCATCAGCTAGCTAGCTAGCATCGATCGAT', 'overexpressed')
+    tRNA_sequence = tRNA('AUG-tRNA', 'GAUUGAGTACCG', 'normal expressed')
+    print(f'El tRNA tiene la secuencia {tRNA_sequence.sequence} is attached to a {tRNA_sequence.name}')
+    tRNA_sequence.check_cca()
+    print()
+    
+    
 
-    print(dna.sequence)
 
 
     

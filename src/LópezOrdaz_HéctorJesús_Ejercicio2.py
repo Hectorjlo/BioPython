@@ -1,4 +1,4 @@
-class gene_sequence():
+class dna_sequence():
 
     def __init__(self, name, sequence, expression):
         self.name = name
@@ -23,6 +23,6 @@ class gene_sequence():
 
 if __name__ == '__main__':
 
-    dna_gene = gene_sequence("lacY", "AAATGCATCAGCTAGCTAGCTAGCATCGATCGAT", "overexpressed")
+    dna_gene = dna_sequence("lacY", "AAATGCATCAGCTAGCTAGCTAGCATCGATCGAT", "overexpressed")
     print(f'The lenght of the gene ({dna_gene.name}) is of {dna_gene.lenght()} bases and is {dna_gene.expression}')
     print(f'It has {dna_gene.gc_content()}% of GC content')
