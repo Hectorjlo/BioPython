@@ -44,25 +44,18 @@ class ncRNA(dna_sequence):
             return rna_type
 
 class protein(tRNA):
-    def calculate_mass_weight(self):
+    def calculate_molecular_weight(self):
         aa_weights = {
             'A': 89.1, 'R': 174.2, 'N': 132.1, 'D': 133.1, 'C': 121.2,
             'E': 147.1, 'Q': 146.2, 'G': 75.1, 'H': 155.2, 'I': 131.2,
             'L': 131.2, 'K': 146.2, 'M': 149.2, 'F': 165.2, 'P': 115.1,
             'S': 105.1, 'T': 119.1, 'W': 204.2, 'Y': 181.2, 'V': 117.1,
         }
-    
+        
+        molecular_weight = sum(aa_weights.get(aminoacid, 0.0) for aminoacid in self.sequence) 
+        
+        return molecular_weight
 
-        
-        
-
-        
-        
-        
- 
-        
-
-        
         
        
     
@@ -77,7 +70,10 @@ if __name__ == '__main__':
     print(f'The name of the ncRNA is: {rna_type.name}')
     size_check = rna_type.size_check()
     print(f"By the lenght the ncRNA is a: '{size_check}'")
-    
+    protein_sequence = protein('LacY', 'MYYLKNTNFWMFGLFFFFYFFIMGAYFPFFPIWLHDINHISKSDTGIIFAAISLFSLLFQPLFGLLSDKLGLRKYLLWIITGMLVMFAPFFIFIFGPLLQYNILVGSIVGGIYLGFCFNAGAPAVEAFIEKVSRRSNFEFGRARMFGCVGWALCASIVGIMFTINNQFVFWLGSGCALILAVLLFFAKTDAPSSATVANAVGANHSAFSLKLALELFRQPKLWFLSLYVIGVSCTYDVFDQQFANFFTSFFATGEQGTRVFGYVTTMGELLNASIMFFAPLIINRIGGKNALLLAGTIMSVRIIGSSFATSALEVVILKTLHMFEVPFLLVGCFKYITSQFEVRFSATIYLVCFCFFKQLAMIFMSVLAGNMYESIGFQGAYLVLGLVALGFTLISVFTLSGPGPLSLLRRQVNEVA', 'Normal-expressed')
+    molecular_weight = protein_sequence.calculate_molecular_weight()
+    print(f"The molecular weight of the protein '{protein_sequence.name}' is of {round(molecular_weight, 4)} Da")
+
 
 
 
