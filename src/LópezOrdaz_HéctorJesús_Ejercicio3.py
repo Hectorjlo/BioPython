@@ -8,6 +8,14 @@ from LópezOrdaz_HéctorJesús_Ejercicio2 import dna_sequence
 #   Luego deriva de tRNA otra subclase llamada proteina
 ###-------------------------###
 
+## Hola Mario :) :
+# Puede que no fuera el mejor código, pero me limité a no cambiar tanto el primer ejercicio
+# se me hizo complicado el hecho de contruir los objetos al paso, y no tener la idea clara desde el inicio
+# principalmente en los argumentos del primer objeto y que los demás toman, por eso tanto el uso de los returns
+# y la complejidad de que biologicamente era complicado hilar todo entre si, pero si me quedo claro el uso de la herencia
+# pero estuvo bien
+
+
 
 class tRNA(dna_sequence):
     
@@ -100,8 +108,6 @@ if __name__ == '__main__':
     protein_lenght = protein_sequence.protein_lenght()
     protein_nucleotides_amount = protein_sequence.nucleotide_lenght()
     print(f"The total amount of aminoacids is of: {protein_lenght}, (If given) The total nucleotides were of: {protein_nucleotides_amount}")
-
-
 
 
 
