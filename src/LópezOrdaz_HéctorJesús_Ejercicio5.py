@@ -230,14 +230,14 @@ def main() -> None:
     for i, protein_info in enumerate(proteins, 1):
         print(f"\nProtein {i}:")
         print(f"    Sequence: {protein_info[0]}")
-        print(f"    {protein_info[1]}, {protein_info[2]}")
+        print(f"    Length: {int(protein_info[1].split(':')[1])/3}, {protein_info[2]}")
     
     # Step 6: Find and display the longest protein (advanced feature)
     if proteins:
         longest = max(proteins, key=lambda x: len(x[0]))
         print("\n[DONE] Longest protein sequence:")
         print(f"    Sequence: {longest[0]}")
-        print(f"    {longest[1]}, {longest[2]}")
+        print(f"    Length: {int(longest[1].split(':')[1])/3}, {longest[2]}")
 
     
 if __name__ == '__main__':
