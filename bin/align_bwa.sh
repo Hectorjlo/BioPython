@@ -160,7 +160,7 @@ if [ "$BATCH_MODE" = true ]; then
     export GENOME PREFIX_INDEX OUTPUT
 
     # Process files in parallel
-    find . -name "${REGEX_NAME}" | parallel -j "$PARALLEL" process_batch {}
+    find . -path "${REGEX_NAME}" | parallel -j "$PARALLEL" process_batch {}
 
 else
     # Single mode if not:
