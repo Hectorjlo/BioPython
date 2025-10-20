@@ -104,7 +104,7 @@ cut_adapters() {
     echo ""
 
     # Run cutadapt
-    cutadapt -q "$QUALITY_CUTOFF" -m "$MIN_LENGTH" -j "$CORES" -o "$outfile_1" -p "$outfile_2" "$infile_1" "$infile_2" > "$log_file" 2>&1
+    cutadapt -q "$QUALITY_CUTOFF" -m "$MIN_LENGTH" -j "$CORES" --pair-filter=any -o "$outfile_1" -p "$outfile_2" "$infile_1" "$infile_2" > "$log_file" 2>&1
     
     if [ $? -eq 0 ]; then
         echo "[DONE] Completed: $namebase"
