@@ -21,7 +21,6 @@ show_usage() {
     echo "  -q,  --quality-cutoff          cutadapt -q"
     echo "  -m,  --minimum-length          cutadapt -m"
     echo "  -o,  --output_prefix           cutadapt -o (default: trimmed)"
-    echo "  -j,  --cores                   cutadapt -j (default: 1)"
     echo "  -j,  --cores                   cutadapt -j (default: 1), actual use would be the cores times parallel value"
     echo "  -p,  --parallel                parallel execution (default: 1)"
     echo "Example:"
@@ -71,7 +70,7 @@ fi
 
 
 # Create output directory if it doesn't exist
-mkdir -p "${OUTPUT_PREFIX}_output"
+mkdir -p "${OUTPUT_PREFIX}"
 
 # Funtion to run cut adapt
 cut_adapters() {
@@ -121,7 +120,7 @@ export -f cut_adapters
 export QUALITY_CUTOFF MIN_LENGTH OUTPUT_PREFIX CORES
 
 
-find . -name "${REGEX_NAME}" | parallel -j "$PARALLEL" cut_adapters {}
+find . -name "${REGEX_NAME}" | parallel --citation -j "$PARALLEL" cut_adapters {}
 echo ""
 echo ""
 echo "[DONE] Thank you for using run_cutadapter_pairend!"
