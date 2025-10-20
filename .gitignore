@@ -4,6 +4,9 @@ src/imgs
 vscode/
 .vscode/
 
+# Big class files 
+alignments/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
