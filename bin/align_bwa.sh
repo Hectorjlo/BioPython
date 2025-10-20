@@ -96,13 +96,13 @@ align_single() {
     echo ""
     echo "[INFO] Aligning: $(basename "$infile_1")"
     echo "  Reference: $genome"
-    echo "  Input R1:  $infile1"
-    echo "  Input R2:  $infile2"
+    echo "  Input R1:  $infile_1"
+    echo "  Input R2:  $infile_2"
     echo "  Output:    $output"
     echo ""
 
     # Lauch bwa mem
-    bwa mem -o "$output" "$prefix" "$infile1" "$infile2"
+    bwa mem -o "$output" "$prefix" "$infile_1" "$infile_2"
 
     #verify if completed
     if [ $? -eq 0 ]; then
