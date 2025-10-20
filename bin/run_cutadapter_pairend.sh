@@ -120,7 +120,7 @@ export -f cut_adapters
 export QUALITY_CUTOFF MIN_LENGTH OUTPUT_PREFIX CORES
 
 
-find . -name "${REGEX_NAME}" | parallel --citation -j "$PARALLEL" cut_adapters {}
+find . -name "${REGEX_NAME}" | parallel -j "$PARALLEL" cut_adapters {}
 echo ""
 echo ""
 echo "[DONE] Thank you for using run_cutadapter_pairend!"
