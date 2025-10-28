@@ -2,7 +2,7 @@
 src/imgs
 
 # temporal files
-tmp/
+
 # VSCode 
 vscode/
 .vscode/
