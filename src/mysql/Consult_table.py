@@ -23,7 +23,7 @@ for x in myresult:
   print(x)
 
 print ("#################################")
-print ("consultadno algunas columnas de tabla")
+print ("consultando algunas columnas de tabla")
 
 cursor.execute("SELECT ExpDiff_id,gene_id,Log2FC FROM ExpDiff WHERE ExpDiff_id<10")
 

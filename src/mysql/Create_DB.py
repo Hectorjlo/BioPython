@@ -15,7 +15,7 @@ try:
     cursor = conn.cursor()
 
     # 3. Ejecutar el comando SQL para crear la base de datos
-    nombre_db = "EOdb"
+    nombre_db = "test_db"
     cursor.execute(f"CREATE DATABASE {nombre_db}")
     print(f"Base de datos '{nombre_db}' creada exitosamente.")
 

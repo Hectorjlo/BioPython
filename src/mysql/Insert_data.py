@@ -12,7 +12,7 @@ conn = mysql.connector.connect(
 cursor = conn.cursor()
 
 # Ruta del archivo
-archivo = '/export/space3/users/vjimenez/Data/ExpDifRes_v2.txt'
+archivo = '/home/hectorjl/WORKING_DIR/biopython/BioPython/src/mysql/ExpDifRes_v2.txt'
 contador=0;
 
 # Leer y procesar el archivo
@@ -31,5 +31,5 @@ print(contador, "registros insertados.")
 
 cursor.close()
 conn.close()
-print ( "Done")
+print("Done")
 
