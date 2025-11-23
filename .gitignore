@@ -2,7 +2,7 @@
 src/imgs
 
 # temporal files
-
+.review/
 # VSCode 
 vscode/
 .vscode/
