@@ -3,6 +3,7 @@ src/imgs
 
 # temporal files
 .review/
+.extractor/
 # VSCode 
 vscode/
 .vscode/
